@@ -7,13 +7,16 @@ import { getAdminResource } from "../services/message.service";
 export const AdminPage: React.FC = () => {
   const [message, setMessage] = useState<string>("");
 
-  const { getAccessTokenSilently } = useAuth0();
+  const { getAccessTokenSilently, getIdTokenClaims } = useAuth0();
 
   useEffect(() => {
     let isMounted = true;
 
     const getMessage = async () => {
       const accessToken = await getAccessTokenSilently();
+      console.log("accessToken", accessToken);
+      const idToken = await getIdTokenClaims();
+      console.log("idToken", idToken);
       const { data, error } = await getAdminResource(accessToken);
 
       if (!isMounted) {

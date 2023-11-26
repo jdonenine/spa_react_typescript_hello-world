@@ -9,6 +9,7 @@ export const ProfilePage: React.FC = () => {
   if (!user) {
     return null;
   }
+  console.log(user);
 
   return (
     <PageLayout>

@@ -11,7 +11,6 @@ export const NavBarButtons: React.FC = () => {
     <div className="nav-bar__buttons">
       {!isAuthenticated && (
         <>
-          <SignupButton />
           <LoginButton />
         </>
       )}

@@ -6,7 +6,7 @@ const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
 
 export const getPublicResource = async (): Promise<ApiResponse> => {
   const config: AxiosRequestConfig = {
-    url: `${apiServerUrl}/api/messages/public`,
+    url: `${apiServerUrl}/api/v1/messages/public`,
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -25,7 +25,7 @@ export const getProtectedResource = async (
   accessToken: string
 ): Promise<ApiResponse> => {
   const config: AxiosRequestConfig = {
-    url: `${apiServerUrl}/api/messages/protected`,
+    url: `${apiServerUrl}/api/v1/messages/protected`,
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -45,7 +45,8 @@ export const getAdminResource = async (
   accessToken: string
 ): Promise<ApiResponse> => {
   const config: AxiosRequestConfig = {
-    url: `${apiServerUrl}/api/messages/admin`,
+    // url: `${apiServerUrl}/api/v1/messages/admin`,
+    url: `${apiServerUrl}/api/v1/places/search`,
     method: "GET",
     headers: {
       "content-type": "application/json",
